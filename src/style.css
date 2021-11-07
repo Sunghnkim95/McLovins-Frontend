@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+* { 
+    margin:0;
+    padding: 2px;
+    box-sizing: border-box;
+}
+.app{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 10px;
+    position:fixed;
+} 
+.backdrop{
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+}
+.logOut{
+    background-color: red;
+    font-family: "Akaya Telivigala";
+    
+}
+.loginForm{
+    display: flex;
+    flex-direction: column;
+    align-content: space-evenly;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+.shopName{
+    display: inline-flex;
+    padding-right: 20px;
+    font-family: "Akaya Telivigala";
+    font-size: xx-large;
+}
+.navBtn {
+    display: inline;
+    font-family: "Akaya Telivigala";
+    font-size: x-large;
+    color: black;
+}
+.navSection{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+.link{
+    text-decoration: black underline;
+}
+.prodLink{
+    color: black;
+}
+.innerbox{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+}
+.innerbox{
+    justify-content: baseline;
+    width: auto;
+    padding:10px;
+    height: 500px;
+    width: 350px;
+    align-items: center;
+    font-family: 'Lobster', cursive;
+    border: 5px solid black;
+    background-color: red;
+    border-radius: 2%;
+}
+ 
+
+.innerboxText{
+    margin-left: 5px;
+    padding-top: 10px;
+}
+.editFeild-inactive{
+    display: none;
+}
+.editFeild-active{
+    display: active;
+}
+.category{
+    display: flex;
+    flex-direction: row;
+    overflow: scroll;
+    font-family: "Akaya Telivigala";
+    font-size: x-large;
+}
+.categoryContainer{
+    font-size: large;
+}
+.fp {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 70vh;
+}
+.fpImg{
+    border: 5px solid black;
+}
+.featuredContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.featuredShowBox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    background-color: red;
+    height: 400px;
+    align-items: center;
+    border: 5px solid black;
+    border-radius: 2%;
+    font-family: "Akaya Telivigala";
+    font-size: large;
+}
+
+.fpName{
+    display: flex;
+    text-decoration: none;
+    font-size: 15px;
+    color: black;
+    align-self: center;
+    justify-content: center;
+    font-size: medium;
+}
+.featuredLink{
+    text-decoration: none;
+    align-self: center;
+}
+.fpImg{
+    align-self: center;
+}
+.home{
+    font-family: "Akaya Telivigala";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 15vh;
+    margin-top: 100px;
+    
+}
+.userName{
+   font-size: 45px;
+}
+.slogan{
+    font-style: italic;
+    color: black;
+    text-decoration: underline;
+    font-size: 30px;
+    align-self: center;
+    font-style: italic;
+}
+.shopName{
+    color: red;
+    font-size: 60px;
+}
+.welcome{
+    display: flex;
+    align-items: baseline;
+}
+.message{
+    display: flex;
+    flex-direction: column;
+}
+.catBox{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: flex-start;
+}
+.category{
+    display: flex;
+    flex-direction: column;
+    width: auto;
+}
+
+.individualContainer {
+    display: flex;
+    height: auto;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    
+  
+}
+.showbox{
+    height: auto;
+    width: 50%;
+    border: 5px solid black;
+    border-radius: 2%;
+    padding:10px;
+    color: black;
+    background-color: red;
+}
+.ip{
+    display: flex;
+    height: auto;
+   
+}
+.ipText {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    font-family: "Akaya Telivigala";
+}
+.prodPhoto{
+    border: 5px solid black;
+    border-radius: 2%;
+}
+.innerboxTextName{
+    padding-bottom: 10px;
+}
+.innerText{
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+.submitBtn:active{
+    background-color: green;
+}
+.quantNumber{
+    display: flex;
+    justify-content: center;
+    width: 45px;
+    height: 35px;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+}
+.quantBox{
+    display:flex;
+    align-items: center;
+}

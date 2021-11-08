@@ -167,7 +167,6 @@ export async function createCartItems(userToken, cartId, product_id, item_quanti
 }
 
 export async function editThisProduct( url, SelectedProduct, userToken, name, description, category, quantity, price, photo) {
-    console.log('editThisProduct marker', SelectedProduct, userToken, name, description, category, quantity, price, photo);
     const actObj = { }
     if(name) {
         actObj["name"] = name;
@@ -238,14 +237,12 @@ export async function checkCartByProduct(userToken, userId, cartId, product_id){
 }
 
 export async function updateItemQuantity(userToken, userId, cartItemId, item_quantity){
-    console.log('updateItemQuantity function', userId, cartItemId, item_quantity);
     try{
         const actObj = {
             "cartItemId": cartItemId,
             "item_quantity": item_quantity,
             "userId": userId
         }
-        console.log('updateItemQuantity actObj', actObj);
         const response = await fetch(`${BASE_URL}/cart_items/cartItemUpdate`, 
         {
             method: "PATCH",
@@ -259,7 +256,6 @@ export async function updateItemQuantity(userToken, userId, cartItemId, item_qua
         })
         const results = await response.json()
         const products = await results
-        console.log('updateItemQuantity products', products);
         return products
     } catch (error) {
         console.error(error);
@@ -300,7 +296,6 @@ export async function setCartInactive(userToken, userId, cartId){
         })
         const results = await response.json()
         const products = await results
-        console.log('inactive', products);
         return products
     } catch (error) {
         console.error(error);
@@ -351,8 +346,6 @@ export async function createNewCart(userToken, userId, email, street, city, stat
         state: state,
         zip: zip
     };
-    console.log('actObjactObj', actObj);
-    console.log('userTokenuserTokenuserToken', userToken);
     try{    
       const response = await fetch(`${BASE_URL}/cart/`, 
       {
@@ -366,7 +359,6 @@ export async function createNewCart(userToken, userId, email, street, city, stat
         )
     })
       const results = await response.json()
-      console.log('createNewCart resultsd', results);
       return results
   }catch(error){
       console.error(error)
@@ -399,7 +391,6 @@ export async function checkAnonymousUser( fullname , email, address, city, state
         )
     })
       const results = await response.json()
-      console.log('anonymous login', results );
       return results
   }catch(error){
       console.error(error)

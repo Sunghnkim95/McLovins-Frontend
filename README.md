@@ -8,7 +8,7 @@ Worked in a group of 4 using git for versional control
 
 Used on Website: -Javascript, React, Node, PSQL, materialUI, Morgan, Express, JWT, Bcrypt 
 
-Credit to:
-Chuck Suitt (kidd5630)
-Johnathan Tran (jvt703)
+Credit to: 
+Chuck Suitt (kidd5630),
+Johnathan Tran (jvt703),
 Michael Simo (MESimo)

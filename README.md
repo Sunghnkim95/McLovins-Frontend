@@ -8,6 +8,10 @@ Worked in a group of 4 using git for versional control
 
 Used on Website: -Javascript, React, Node, PSQL, materialUI, Morgan, Express, JWT, Bcrypt 
 
+Frontend available via this link: https://github.com/Sunghnkim95/McLovins-Backend
+
+Watch us give a presentation on the project @ https://youtu.be/DEXfHUk9I6U
+
 Credit to: 
 Chuck Suitt (kidd5630),
 Johnathan Tran (jvt703),

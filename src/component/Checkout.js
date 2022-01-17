@@ -17,7 +17,7 @@ const Checkout = ({ userToken, userId, setAllCartItem }) => {
     const [expmonth, setExpmonth] = useState('')
     const [expyear, setExpyear] = useState('')
     const [cvv, setCvv] = useState('')
-    //const confirmation = useHistory();
+    const confirmation = useHistory();
 
     async function nonUserCheckout(userId) {
         const checkoutAnon = await checkAnonymousUser(fullname, email, address, city, state, zip, cardname, cardnumber, expmonth, expyear, cvv);
@@ -35,13 +35,13 @@ const Checkout = ({ userToken, userId, setAllCartItem }) => {
         if (!userToken) {
             nonUserCheckout();
             setAllCartItem(removeCurrentCartItems())
-            //confirmation.push('/confirmation')
+            confirmation.push('/confirmation')
         } else {
             setCartInactive(userToken, userId, cartId);
             createOrderHistory(userToken, userId, cartId, fullname, email, address, city, state, zip, cardname, cardnumber, expmonth, expyear, cvv);
             const newCart = await createNewCart(userToken, userId, email, address, city, state, zip);
             localStorage.setItem('Cart', JSON.stringify(newCart));
-            //confirmation.push('/confirmation')
+            confirmation.push('/confirmation')
         }
     }
 
@@ -101,7 +101,7 @@ const Checkout = ({ userToken, userId, setAllCartItem }) => {
                     }}></input>
                 </div>
                 <button type="submit" className='checkout_confirmbtn'>Confirm Order</button>
-                <Confirmation/>
+                {/* <Confirmation/> */}
             </form>
 
         </div>

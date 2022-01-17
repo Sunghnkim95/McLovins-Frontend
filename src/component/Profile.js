@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Admin from './Admin';
 import EditProfile from './EditProfile';
 
-const Profile = ({ usersList, myUsername, userToken, isAdmin, myPassword, setMyPassword, myEmail, setMyEmail }) => {
+const Profile = ({ hiddenPass, setHiddenPass, usersList, myUsername, userToken, isAdmin, myPassword, setMyPassword, myEmail, setMyEmail }) => {
     const [isActiveEdit, setActiveEdit] = useState("false");
     const [isActiveAdmin, setActiveAdmin] = useState("false");
     const ToggleClass = () => {
@@ -15,7 +15,8 @@ const Profile = ({ usersList, myUsername, userToken, isAdmin, myPassword, setMyP
     for (let i = 0; i < myPassword.length; i++) {
         hiddenPassword += "*";
     }
-
+    setHiddenPass(hiddenPassword);
+    
     return (
         <>
             <div className="userInfo">
@@ -48,9 +49,12 @@ const Profile = ({ usersList, myUsername, userToken, isAdmin, myPassword, setMyP
                             userToken={userToken}
                             name={myUsername}
                             email={myEmail}
-                            password={hiddenPassword}
+                            password={myPassword}
                             setMyPassword={setMyPassword}
                             setMyEmail={setMyEmail}
+                            hiddenPass={hiddenPass}
+                            setHiddenPass={setHiddenPass}
+                            myPassword={myPassword}
                         />
                     </div>
                 </div>)

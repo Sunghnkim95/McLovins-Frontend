@@ -267,12 +267,8 @@ input[type=number]::-webkit-outer-spin-button {
 .editProductAside{
       display: flex;  
       flex-direction: column;
-      justify-content: start;
 }
-.editProductContent{
-  
 
-}
 .editProductInputBox{
     height: 100px;
     width: 50%;

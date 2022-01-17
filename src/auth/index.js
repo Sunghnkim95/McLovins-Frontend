@@ -38,3 +38,6 @@ export function removeCurrentCart() {
 export function removeUserList() {
   localStorage.removeItem('usersList');
 }
+export function removeHiddenPass(){
+  localStorage.removeItem('hiddenPass')
+}

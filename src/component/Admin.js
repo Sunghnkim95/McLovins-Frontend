@@ -42,7 +42,6 @@ const Admin = ({ userToken }) => {
         } catch (error) {
             console.error(error);
         }
-
     }
 
     return (

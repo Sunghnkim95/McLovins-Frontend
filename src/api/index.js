@@ -19,26 +19,19 @@ export async function fetchRegisterUser(url, username, password, email) {
         console.error(error);
     }
 }
-export async function editUser(url, userToken, userName, password, email) {
-    const actObj = {}
-    if (userName) {
-        actObj["username"] = userName;
-    }
-    if (password) {
-        actObj["password"] = password;
-    }
-    if (email) {
-        actObj["email"] = email;
-    }
+
+export async function editUser(url, userToken,  email, password) {
     try {
-        const response = await fetch(`${url}/user/me`, {
+        const response = await fetch(`${url}/users/me`, {
             method: "PATCH",
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': "Bearer " + userToken
             },
-            body: JSON.stringify(
-                actObj
+            body: JSON.stringify({
+                ...(email && {email: email}), 
+                ...(password && {password: password})
+              }
             )
         })
         const data = await response.json();
@@ -236,8 +229,7 @@ export async function deleteProduct(url, SelectedProduct, userToken ) {
                 'Authorization': `Bearer ${userToken}`
             }
         })
-        const results = await response.json()
-        console.log("this is for the delete", results)
+        const results = await response.json();
         return results
     } catch (error) {
         console.error(error);

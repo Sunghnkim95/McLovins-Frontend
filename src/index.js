@@ -13,7 +13,8 @@ const App = () => {
 	const [myUsername, setMyUsername] = useState(localStorage.getItem('myUsername') ? localStorage.getItem('myUsername').slice(1, -1) : null);
 	const [isAdmin, setIsAdmin] = useState(getIsAdmin());
 	const [myPassword, setMyPassword] = useState('');
-	const [myEmail, setMyEmail] = useState('');
+	const [myEmail, setMyEmail] = useState(localStorage.getItem('email') ? localStorage.getItem('email') : null);
+	const [hiddenPass, setHiddenPass ]= useState(localStorage.getItem('hiddenPass') ? localStorage.getItem('hiddenPass') : null);
 	const [selectedProduct, setselectedProduct] = useState(getProdId());
 	const [productName, setProductName] = useState("");
 	const [productDescript, setProductDescript] = useState("");
@@ -112,6 +113,8 @@ const App = () => {
 									myEmail={myEmail}
 									setMyEmail={setMyEmail}
 									userToken={userToken}
+									hiddenPass={hiddenPass} 
+									setHiddenPass={setHiddenPass}
 								/>
 							</Route>
 							<Route exact path="/product">
@@ -170,6 +173,10 @@ const App = () => {
 							</Route>
 							<Route exact path="/order_history">
 								<OrderHistory
+								/>
+							</Route>
+							<Route exact path="/confirmation">
+								<Confirmation
 								/>
 							</Route>
 							
@@ -275,6 +282,10 @@ const App = () => {
 									userToken={userToken}
 									userId={userId}
 									setAllCartItem={setAllCartItem}
+								/>
+							</Route>
+							<Route exact path="/confirmation">
+								<Confirmation
 								/>
 							</Route>
 						</Switch>

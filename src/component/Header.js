@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import { removeUserList, removeCurrentEmail, removeCurrentUserToken, removeCurrentUsername, removeIsAdmin, removeUserId, removeCurrentCartItems, removeCurrentCart, removeCurrentCartDisplayNumb }
+import { removeHiddenPass, removeUserList, removeCurrentEmail, removeCurrentUserToken, removeCurrentUsername, removeIsAdmin, removeUserId, removeCurrentCartItems, removeCurrentCart, removeCurrentCartDisplayNumb }
     from '../auth'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import LogoutIcon from '@mui/icons-material/Logout';
@@ -58,6 +58,7 @@ const Header = ({ setMyEmail, userToken, setUserToken, setMyUsername, setIsAdmin
                                         removeCurrentCart();
                                         removeCurrentEmail();
                                         removeUserList();
+                                        removeHiddenPass();
                                         history.push("/");
                                     }}><LogoutIcon></LogoutIcon> LOGOUT
                                 </button>

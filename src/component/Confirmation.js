@@ -14,6 +14,5 @@ const Confirmation = ({ cartDisplayNumber, setCartDisplayNumber, userToken, allP
       </Link>
     </div>
   )
-
 }
 export default Confirmation;

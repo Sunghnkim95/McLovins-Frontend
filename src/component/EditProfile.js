@@ -1,26 +1,19 @@
 import React, { useState } from 'react';
 import { editUser, BASE_URL } from '../api'
 
-const EditProfile = ({password, email, userToken, ToggleClass, setMyPassword,setMyEmail }) => {
+const EditProfile = ({email, userToken, ToggleClass, setMyPassword,setMyEmail }) => {
 
-    const [newPass, setNewPass] = useState(password);
+    const [newPass, setNewPass] = useState("");
     const [newEmail, setNewEmail] = useState(email);
-    function resetForm() {
-        setNewUser('');
-        setNewPass('');
-        setNewEmail('');
-    }
+
     async function edit(e) {
         e.preventDefault();
         try {
-            const results = await editUser(BASE_URL, userToken, newPass, newEmail);
-            console.log("these are the results from edit", results)
+            const results = await editUser(BASE_URL, userToken, newEmail,  newPass,);
             if (results) {
                 setMyPassword(newPass);
                 setMyEmail(newEmail)
-                location.reload()
                 ToggleClass();
-                resetForm();
             }
         } catch (error) {
             console.error(error)
